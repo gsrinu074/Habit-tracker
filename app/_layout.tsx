@@ -7,12 +7,12 @@ function RouteGuard({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (!isAuth) {
-      router.replace("/auth");
+      setTimeout(() => router.replace("/auth"), 0);
     }
   });
   return <>{children}</>;
 }
-export default function TabsLayout() {
+export default function RootLayout() {
   return (
     <RouteGuard>
       <Stack>
